@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@/*": [
+                "./resources/ts/*"
+            ],
+        },
+        "target": "ESNext",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "jsx": "preserve",
+        "module": "es2022",
+        "moduleResolution": "node",
+        "esModuleInterop": false,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "types": ["react", "node", "vite/client", "vitest"]
+    },
+    "include": ["resources/ts/**/*"],
+    "exclude": ["node_modules", "public", "dist", "\"**/*.spec.ts\""]
+}
