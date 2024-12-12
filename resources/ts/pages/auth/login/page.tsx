@@ -1,7 +1,6 @@
 import { FormEvent, ReactElement } from 'react';
-import { TextField } from '@/components/TextField';
 import { Link, usePage, useForm } from '@inertiajs/react';
-import { Button, Paper, PasswordInput, Stack } from '@mantine/core';
+import { Button, Paper, TextInput, PasswordInput, Stack } from '@mantine/core';
 
 type FormData = {
     email: string;
@@ -22,7 +21,7 @@ export function Page(): ReactElement {
             <form onSubmit={submit}>
                 <Stack>
                     <h1 className="text-2xl font-black">Login</h1>
-                    <TextField
+                    <TextInput
                         label="Email"
                         value={data.email}
                         onChange={(e) => setData('email', e.target.value)}

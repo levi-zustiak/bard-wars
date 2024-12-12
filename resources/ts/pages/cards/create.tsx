@@ -1,9 +1,9 @@
 import { FormEvent, ReactElement } from 'react';
 import { useForm, usePage } from '@inertiajs/react';
-import { TextField } from '@/components/TextField';
 import {
     Button,
     Group,
+    TextInput,
     NumberInput,
     Paper,
     Select,
@@ -93,7 +93,7 @@ export function Page(): ReactElement {
             <form onSubmit={submit}>
                 <Stack>
                     <h1>Add Card</h1>
-                    <TextField
+                    <TextInput
                         label="Name"
                         value={data.name}
                         onChange={(e) => setData('name', e.target.value)}
@@ -102,7 +102,6 @@ export function Page(): ReactElement {
                     <Select
                         label="Landscape"
                         data={landscapes}
-                        // value={data.landscape}
                         onChange={(_value, option) =>
                             setData('landscape', _value)
                         }
@@ -124,18 +123,24 @@ export function Page(): ReactElement {
                         label="Cost"
                         value={data.cost}
                         onChange={(v) => setData('cost', v)}
+                        min={0}
+                        max={5}
                         error={errors.cost}
                     />
                     <NumberInput
                         label="Attack"
                         value={data.attack}
                         onChange={(v) => setData('attack', v)}
+                        min={0}
+                        max={10}
                         error={errors.attack}
                     />
                     <NumberInput
                         label="Defense"
                         value={data.defense}
                         onChange={(v) => setData('defense', v)}
+                        min={0}
+                        max={12}
                         error={errors.defense}
                     />
                     <Dropzone
