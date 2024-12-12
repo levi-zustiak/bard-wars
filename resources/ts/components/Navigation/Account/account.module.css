@@ -1,0 +1,15 @@
+.accountButton {
+    padding: 12px;
+    min-height: 64px;
+
+    &:hover {
+        /*background-color: red;*/
+    }
+}
+
+.account {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    text-align: initial;
+}

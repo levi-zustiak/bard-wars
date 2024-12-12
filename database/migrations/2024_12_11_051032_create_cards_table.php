@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->enum('landscape', ['blue plains', 'cornfield', 'nicelands', 'useless swamp', 'sandylands', 'icylands', 'rainbow']);
             $table->enum('type', ['creature', 'spell', 'building']);
+            $table->string('trigger')->nullable();
             $table->text('ability');
             $table->integer('cost');
             $table->integer('attack')->nullable();
