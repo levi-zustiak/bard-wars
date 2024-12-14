@@ -26,6 +26,7 @@ export function Page(): ReactElement {
                         value={data.email}
                         onChange={(e) => setData('email', e.target.value)}
                         error={errors.email}
+                        variant="filled"
                     />
                     <PasswordInput
                         label="Password"

@@ -1,0 +1,13 @@
+.root {
+    &[data-variant="outline"] {
+        border: 2px solid var(--mantine-color-dark-8);
+        color: var(--mantine-color-dark-8);
+        transition: all 120ms ease-in-out;
+
+        &:hover {
+            background-color: transparent;
+            transform: translate(-3px, -3px);
+            box-shadow: 3px 3px 0 var(--mantine-color-dark-8);
+        }
+    }
+}

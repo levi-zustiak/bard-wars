@@ -1,6 +1,14 @@
 .nav {
    width: 100%;
-    border: 2px solid black;
+    padding: 1rem;
+}
+
+.innerNav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    border: 2px solid var(--mantine-color-dark-8);
+    border-radius: 12px;
     display: flex;
-    padding: 8px;
+    justify-content: space-between;
 }

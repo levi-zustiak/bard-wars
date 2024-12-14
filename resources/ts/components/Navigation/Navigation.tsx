@@ -3,6 +3,7 @@ import { Link, usePage } from '@inertiajs/react';
 import { AuthUser } from '@/types/auth';
 import { Account } from '@/components/Navigation/Account';
 import { Button } from '@mantine/core';
+import styles from "./Navigation.module.css"
 
 export function Navigation(): ReactElement {
     const { auth } = usePage<{ auth: { user: AuthUser } }>().props;
@@ -11,11 +12,12 @@ export function Navigation(): ReactElement {
 
     return (
         <nav
-            className="h-full border-r border-solid border-base-200 flex flex-col p-6"
+            className={styles.nav}
             style={{
                 gridArea: 'nav',
             }}
         >
+            <div className={styles.innerNav}>
             <h2 className="text-2xl font-bold whitespace-nowrap">Bard Wars</h2>
             {loggedIn && (
                 <div className="flex flex-col gap-2 mt-4">
@@ -34,10 +36,11 @@ export function Navigation(): ReactElement {
                 {loggedIn ? (
                     <Account />
                 ) : (
-                    <Button href="/login" component={Link}>
+                    <Button href="/login" component={Link} variant="outline">
                         Log in
                     </Button>
                 )}
+            </div>
             </div>
         </nav>
     );
