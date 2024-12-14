@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import type { ICard, Deck } from '@/types';
-import { Card } from '@/components/Card/Card';
+import { Card } from '@/components/Card';
 
 interface PageProps {
     deck: Deck & { cards: ICard[] };

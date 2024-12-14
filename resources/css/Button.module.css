@@ -9,5 +9,21 @@
             transform: translate(-3px, -3px);
             box-shadow: 3px 3px 0 var(--mantine-color-dark-8);
         }
+
+        &:active {
+            transform: translate(0, 0);
+            box-shadow: none;
+        }
+    }
+
+    &[data-variant="link"] {
+        border: none;
+        color: var(--mantine-color-text);
+        background-color: transparent;
+        text-decoration: underline;
+
+        &:active {
+            transform: none;
+        }
     }
 }

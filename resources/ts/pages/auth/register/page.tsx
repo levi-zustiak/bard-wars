@@ -18,7 +18,7 @@ export function Page(): ReactElement {
     };
 
     return (
-        <Paper p="xl" withBorder>
+        <Paper p="xl">
             <form onSubmit={submit}>
                 <Stack>
                     <h1 className="text-2xl font-black">Register</h1>
@@ -47,7 +47,7 @@ export function Page(): ReactElement {
             </form>
             <div className="mt-4 flex items-center">
                 <p className="text-base-300">Already have an account?</p>
-                <Button href="/login" component={Link}>
+                <Button href="/login" component={Link} variant="link">
                     Login
                 </Button>
             </div>

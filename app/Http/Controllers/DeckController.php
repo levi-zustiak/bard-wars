@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CardResource;
 use App\Http\Resources\DeckResource;
+use App\Models\Card;
 use App\Models\Deck;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,7 +16,6 @@ class DeckController extends Controller
     {
         $decks = $request->user()
             ->decks()
-//            ->with('cards')
             ->withCount('cards')
             ->get();
 
@@ -28,7 +29,6 @@ class DeckController extends Controller
 
         $deck = new DeckResource($deck->load('cards'));
 
-//        dd($deck);
         return Inertia::render('decks/show', [
             'deck' => $deck,
         ]);
@@ -36,6 +36,8 @@ class DeckController extends Controller
 
     public function create(): Response
     {
-        return Inertia::render('decks/create');
+        return Inertia::render('decks/create', [
+            'cards' => CardResource::collection(Card::all()),
+        ]);
     }
 }

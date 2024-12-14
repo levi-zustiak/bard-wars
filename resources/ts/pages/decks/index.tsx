@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { Deck } from '@/types';
 import { Link } from '@inertiajs/react';
+import { Button } from '@mantine/core';
 
 type PageProps = {
     decks: Array<Deck & { card_count: number }>;
@@ -9,7 +10,12 @@ type PageProps = {
 export function Page({ decks }: PageProps): ReactElement {
     return (
         <div>
-            <h1>Decks</h1>
+            <div className="flex justify-between">
+                <h1 className="text-4xl font-bold">Decks</h1>
+                <Link href="/decks/create">
+                    <Button>Add Deck</Button>
+                </Link>
+            </div>
             <div className="flex flex-col gap-4">
                 {decks.map((deck) => (
                     <div className="card bordered p-4 w-60">

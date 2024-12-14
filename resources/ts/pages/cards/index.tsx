@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Link } from '@inertiajs/react';
-import { Card } from '@/components/Card/Card';
+import { Card } from '@/components/Card';
 import { ICard } from '@/types';
 import { Button } from '@mantine/core';
 

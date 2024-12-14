@@ -15,6 +15,7 @@ return new class extends Migration
             $table->foreignId('card_id');
             $table->foreignId('deck_id');
             $table->primary(['card_id', 'deck_id']);
+            $table->integer('count');
             $table->boolean('primary')->default(false);
             $table->timestamps();
         });

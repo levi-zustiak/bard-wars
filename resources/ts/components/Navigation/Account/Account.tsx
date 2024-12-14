@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import { Link, usePage } from '@inertiajs/react';
 import { AuthUser } from '@/types/auth';
-import { Avatar, Button, Menu } from '@mantine/core';
-import styles from './account.module.css';
+import { Avatar, Menu, UnstyledButton } from '@mantine/core';
+import styles from './Account.module.css';
 
 export function Account(): ReactElement {
     const { auth } = usePage<{ auth: { user: AuthUser } }>().props;
@@ -10,18 +10,16 @@ export function Account(): ReactElement {
     return (
         <Menu>
             <Menu.Target>
-                <Button
-                    // className="w-full flex gap-4 bg-neutral-content hover:bg-base-200 rounded-xl p-4"
+                <UnstyledButton
+                    variant="subtle"
+                    color="secondary"
                     className={styles.accountButton}
                 >
                     <div className={styles.account}>
                         <Avatar src={auth.user.avatar} alt="user-avatar" />
-                        <div>
-                            <h4>{auth.user.name}</h4>
-                            <h6 className="text-base-300">{auth.user.email}</h6>
-                        </div>
+                        <h4 className="text-lg">{auth.user.name}</h4>
                     </div>
-                </Button>
+                </UnstyledButton>
             </Menu.Target>
             <Menu.Dropdown>
                 <Menu.Item>Settings</Menu.Item>

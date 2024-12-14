@@ -17,7 +17,7 @@ export function Page(): ReactElement {
     };
 
     return (
-        <Paper p="xl" withBorder>
+        <Paper p="xl">
             <form onSubmit={submit}>
                 <Stack>
                     <h1 className="text-2xl font-black">Login</h1>
@@ -26,7 +26,6 @@ export function Page(): ReactElement {
                         value={data.email}
                         onChange={(e) => setData('email', e.target.value)}
                         error={errors.email}
-                        variant="filled"
                     />
                     <PasswordInput
                         label="Password"
@@ -41,7 +40,7 @@ export function Page(): ReactElement {
             </form>
             <div className="mt-4 flex items-center">
                 <p className="text-base-300">Don't have an account?</p>
-                <Button href="/register" component={Link}>
+                <Button href="/register" component={Link} variant="link">
                     Register
                 </Button>
             </div>
