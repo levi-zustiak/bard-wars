@@ -1,0 +1,3 @@
+[submodule "CardWarsData"]
+	path = CardWarsData
+	url = git@github.com:itderrickh/CardWarsData.git

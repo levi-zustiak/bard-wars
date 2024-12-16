@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('trigger')->nullable();
             $table->text('ability');
             $table->integer('cost');
-            $table->integer('attack')->nullable();
-            $table->integer('defense')->nullable();
+            $table->integer('attack')->nullable()->default(NULL);
+            $table->integer('defense')->nullable()->default(NULL);
             $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();

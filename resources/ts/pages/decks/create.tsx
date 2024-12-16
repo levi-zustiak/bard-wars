@@ -88,7 +88,7 @@ export function Page({ cards }: PageProps): ReactElement {
             </div>
             <div>
                 <h3 className="text-xl font-bold mb-4">Cards</h3>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                     {cards.map((card) => (
                         <SelectableCard
                             card={card}

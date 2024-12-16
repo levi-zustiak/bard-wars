@@ -17,7 +17,7 @@ export function Page({ cards }: PageProps): ReactElement {
                     <Button>Add Card</Button>
                 </Link>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
                 {cards.map((card) => (
                     <Card key={card.id} {...card} />
                 ))}
